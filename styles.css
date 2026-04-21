@@ -1,0 +1,203 @@
+.block-container { padding-top: 1.2rem; padding-bottom: 3rem; max-width: 1400px; }
+html, body, [data-testid="stAppViewContainer"] { background: __BG__; }
+.muted { color: __MUTED__; }
+
+/* Force text colors in dark mode (Streamlit defaults can override) */
+[data-testid="stMarkdownContainer"] { color: __TEXT__; }
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] span,
+[data-testid="stMarkdownContainer"] strong,
+[data-testid="stMarkdownContainer"] em {
+  color: __TEXT__;
+}
+h1, h2, h3, h4, h5, h6 { color: __TEXT__; }
+label, [data-testid="stCaptionContainer"] { color: __MUTED__ !important; }
+[data-testid="stText"] { color: __TEXT__ !important; }
+.topnav { display:flex; align-items:flex-end; justify-content:space-between; gap: 16px; margin: 14px 0 14px 0; }
+.topnav-left { display:flex; flex-direction:column; gap: 2px; }
+.brand { font-weight: 900; letter-spacing: -0.02em; color: __TEXT__; font-size: 18px; }
+.brand-sub { color: __MUTED__; font-size: 12.5px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1200px) { .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .kpi-grid { grid-template-columns: 1fr; } }
+
+/* Buttons */
+div.stButton > button {
+  width: 100%;
+  border-radius: 14px;
+  height: 44px;
+  font-weight: 700;
+  border: 1px solid __BORDER__;
+  background-color: __PANEL__ !important;
+  color: __TEXT__ !important;
+}
+div.stButton > button:hover,
+div.stButton > button:focus,
+div.stButton > button:active {
+  background-color: __PANEL2__ !important;
+  color: __TEXT__ !important;
+}
+/* Download buttons use a different wrapper */
+div.stDownloadButton > button {
+  width: 100%;
+  border-radius: 14px;
+  height: 44px;
+  font-weight: 700;
+  border: 1px solid __BORDER__;
+  background-color: __PANEL__ !important;
+  color: __TEXT__ !important;
+}
+/* Newer Streamlit wrapper */
+[data-testid="stDownloadButton"] button {
+  width: 100%;
+  border-radius: 14px;
+  height: 44px;
+  font-weight: 700;
+  border: 1px solid __BORDER__;
+  background-color: __PANEL__ !important;
+  color: __TEXT__ !important;
+}
+
+/* Cards */
+.card {
+  background: __PANEL__;
+  border: 1px solid __BORDER__;
+  border-radius: 16px;
+  padding: 14px 14px;
+  backdrop-filter: blur(8px);
+}
+.card-title { font-weight: 700; font-size: 13px; letter-spacing: 0.02em; color: __MUTED__; text-transform: uppercase; }
+.card-value { font-weight: 800; font-size: 28px; color: __TEXT__; line-height: 1.15; margin-top: 6px; }
+.card-sub { margin-top: 6px; color: __MUTED__; font-size: 12.5px; }
+
+/* Hero */
+.hero {
+  border-radius: 18px;
+  padding: 18px 18px;
+  border: 1px solid __BORDER__;
+  background: linear-gradient(135deg, rgba(34,197,94,0.18), rgba(37,99,235,0.18));
+}
+.hero h1 { margin: 0; font-size: 34px; line-height: 1.12; color: __TEXT__; letter-spacing: -0.02em; }
+.hero p { margin: 8px 0 0 0; color: __MUTED__; font-size: 14.5px; }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 10px; border-radius: 999px;
+  background: __PANEL2__; border: 1px solid __BORDER__; color: __MUTED__;
+  font-size: 12px; font-weight: 650;
+}
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: __ACCENT2__;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.16);
+}
+
+/* Charts */
+[data-testid="stPlotlyChart"] > div {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid __BORDER__;
+  background: __PANEL__;
+}
+
+/* Sidebar */
+[data-testid="stSidebarContent"] { padding-top: 1rem; }
+section[data-testid="stSidebar"] {
+  border-right: 1px solid __BORDER__;
+  background: __PANEL__;
+}
+section[data-testid="stSidebar"] * { color: __TEXT__; }
+section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+  color: __MUTED__ !important;
+}
+
+/* Inputs in sidebar (select/multiselect) */
+section[data-testid="stSidebar"] [data-baseweb="select"] > div {
+  background-color: __PANEL2__ !important;
+  border: 1px solid __BORDER__ !important;
+}
+section[data-testid="stSidebar"] [data-baseweb="select"] input {
+  color: __TEXT__ !important;
+}
+section[data-testid="stSidebar"] [data-baseweb="select"] svg {
+  color: __MUTED__ !important;
+}
+
+/* Chips in sidebar multiselect (best-effort) */
+section[data-testid="stSidebar"] [data-baseweb="tag"] {
+  background-color: rgba(96,165,250,0.18) !important;
+  border: 1px solid __BORDER__ !important;
+  color: __TEXT__ !important;
+}
+section[data-testid="stSidebar"] [data-baseweb="tag"] svg {
+  color: __MUTED__ !important;
+}
+
+/* Top navigation pills (st.pills) */
+[data-testid="stPills"] [role="tablist"] {
+  background: transparent !important;
+  gap: 8px !important;
+}
+
+/* 1. Base Button Styling & Initial Text Color (Muted) */
+[data-testid="stPills"] button {
+  background-color: __PANEL__ !important;
+  border: 1px solid __BORDER__ !important;
+  border-radius: 999px !important;
+  padding: 6px 16px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Targeting every possible text container to force the 'muted' look */
+[data-testid="stPills"] button p,
+[data-testid="stPills"] button span,
+[data-testid="stPills"] button div {
+  color: __MUTED__ !important;
+  -webkit-text-fill-color: __MUTED__ !important;
+  font-weight: 600 !important;
+}
+
+/* 2. Hover State */
+[data-testid="stPills"] button:hover {
+  background-color: __PANEL2__ !important;
+  border-color: __ACCENT2__ !important;
+}
+
+[data-testid="stPills"] button:hover p,
+[data-testid="stPills"] button:hover span {
+  color: __TEXT__ !important;
+  -webkit-text-fill-color: __TEXT__ !important;
+}
+
+/* 3. Selected/Active State */
+[data-testid="stPills"] button[aria-selected="true"] {
+  background: rgba(96,165,250,0.22) !important;
+  border-color: __ACCENT2__ !important;
+  box-shadow: 0 0 0 1px __ACCENT2__ !important;
+}
+
+[data-testid="stPills"] button[aria-selected="true"] p,
+[data-testid="stPills"] button[aria-selected="true"] span {
+  color: __TEXT__ !important;
+  -webkit-text-fill-color: __TEXT__ !important;
+  font-weight: 800 !important;
+}
+
+/* Expander header only (avoid affecting chart internals) */
+[data-testid="stExpander"] {
+  border: 1px solid __BORDER__ !important;
+  border-radius: 12px !important;
+  background: __PANEL__ !important;
+}
+[data-testid="stExpander"] details {
+  background: __PANEL__ !important;
+}
+[data-testid="stExpander"] summary {
+  background: __PANEL__ !important;
+  color: __TEXT__ !important;
+}
+[data-testid="stExpander"] summary *,
+[data-testid="stExpander"] [role="button"] * {
+  color: __TEXT__ !important;
+  fill: __TEXT__ !important;
+}
